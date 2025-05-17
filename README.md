@@ -1,6 +1,6 @@
 # Medical-assistant-doctor-demo
 This Streamlit-based application serves as an AI-powered medical assistant, enabling users to interact with a chatbot for medical queries and upload prescription PDFs for medical history management. It integrates advanced NLP models and local storage for conversation and medical history.
-# Features
+## Features
 -Chatbot Interface: Users can ask medical questions or describe symptoms, with responses generated using the llama3-med42-8b model via Ollama, enhanced by Retrieval-Augmented Generation (RAG).
 -Prescription Upload: Upload PDF prescriptions, which are parsed using NER (Named Entity Recognition) to extract diagnoses, medications, dates, and notes, stored in a local JSON file.
 -Memory System: Utilizes a SentenceTransformer model (all-MiniLM-L6-v2) for embedding-based retrieval of relevant past conversations, with a configurable top_k for context inclusion.
