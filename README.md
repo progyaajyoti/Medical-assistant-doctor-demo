@@ -1,11 +1,33 @@
 # Medical-assistant-doctor-demo
 This Streamlit-based application serves as an AI-powered medical assistant, enabling users to interact with a chatbot for medical queries and upload prescription PDFs for medical history management. It integrates advanced NLP models and local storage for conversation and medical history.
-## Features
--Chatbot Interface: Users can ask medical questions or describe symptoms, with responses generated using the llama3-med42-8b model via Ollama, enhanced by Retrieval-Augmented Generation (RAG).
--Prescription Upload: Upload PDF prescriptions, which are parsed using NER (Named Entity Recognition) to extract diagnoses, medications, dates, and notes, stored in a local JSON file.
--Memory System: Utilizes a SentenceTransformer model (all-MiniLM-L6-v2) for embedding-based retrieval of relevant past conversations, with a configurable top_k for context inclusion.
--Intent Classification: Employs DistilBERT to classify user queries into memory, non-memory, or medical history intents, tailoring responses accordingly.
--Medical History Management: Stores and displays parsed prescription data locally in medical_history.json, with a user-friendly interface to view records.
--PDF Generation: Generates downloadable PDF prescriptions from chatbot responses when requested.
--Local Persistence: Saves conversation history (conversation_history.json) and top_k settings (top_k_history.csv) locally for session continuity.
+# Medical Chatbot Application
 
+This Streamlit-based application serves as an AI-powered medical assistant, enabling users to interact with a chatbot for medical queries and upload prescription PDFs for medical history management.
+
+## Features
+- **Chatbot Interface**: Engage with a medical chatbot powered by `llama3-med42-8b` using Retrieval-Augmented Generation (RAG).
+- **Prescription Upload**: Parse PDF prescriptions with NER to extract and store diagnoses, medications, and notes.
+- **Memory System**: Retrieve relevant past conversations using SentenceTransformer embeddings.
+- **Intent Classification**: Classify queries with DistilBERT for tailored responses.
+- **Medical History Management**: Store and display medical records locally in `medical_history.json`.
+- **PDF Generation**: Download prescriptions as PDFs from chatbot responses.
+- **Local Persistence**: Save conversation history and settings in JSON and CSV files.
+
+## Key Components
+- **NLP Models**:
+  - SentenceTransformer (`all-MiniLM-L6-v2`) for embeddings.
+  - BERT-based NER (`dslim/bert-base-NER`) for prescription parsing.
+  - DistilBERT (`distilbert-base-uncased`) for intent classification.
+- **Libraries**: Streamlit, Ollama, pdfplumber, ReportLab, NLTK, Pandas, PyTorch, scikit-learn.
+- **Storage**: Local JSON and CSV files with error handling.
+- **UI**: Streamlit interface with navigation for Chatbot and Prescription Upload pages.
+
+## Usage
+- Navigate to the Chatbot page to ask medical questions or generate prescriptions.
+- Upload PDFs on the Prescription Upload page to manage medical history.
+- Delete `medical_history.json` manually for data privacy.
+
+## Notes
+- **Disclaimer**: This is a demo, not a substitute for professional medical advice.
+- **Dependencies**: Install required libraries and set up Ollama.
+- **Storage**: Data is stored locally with no external dependencies.
